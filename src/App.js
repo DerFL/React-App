@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import "bootstrap/dist/css/bootstrap.min.css"
 
 function App() {
+  const [mlik_count, setMilk] = useState(0);
+  const [oreo_count, setoreo] = useState(0);
+  const [kitkat_count, setkitkat] = useState(0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <p>You have {mlik_count} bags of milk</p>
+      <button onClick={() => setMilk(mlik_count + 1)}>
+        Add
+      </button>
+      <button onClick={() => setMilk(mlik_count - 1)}>
+        Remove
+      </button>
+
+      <p>You have {oreo_count} packs of oreos</p>
+      <button onClick={() => setoreo(oreo_count + 1)}>
+        Add
+      </button>
+      <button onClick={() => setoreo(oreo_count - 1)}>
+        Remove
+      </button>
+
+      <p>You have {kitkat_count} bars of kitkat</p>
+      <button onClick={() => setkitkat(kitkat_count + 1)}>
+        Add
+      </button>
+      <button onClick={() => setkitkat(kitkat_count - 1)}>
+        Remove
+      </button>
     </div>
   );
 }
